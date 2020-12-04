@@ -1,3 +1,74 @@
 .App {
   text-align: center;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #6aa87b;
+  font-family: sans-serif;
+  color: #303d34;
+  height: 200px;
+  justify-content: center;
+  width: 100vw;
+}
+
+h1, h2 {
+  font-family: 'Gill Sans';
+}
+
+img {
+  height: 250px;
+}
+
+.about {
+  display: flex;
+  margin: 50px;
+  width: 1000px;
+  align-self: center;
+}
+
+.text {
+  margin-left: 30px;
+  transform: translateY(30px);
+  color: #303d34;
+}
+
+label {
+  color: #303d34;
+  font-size: 1.2em;
+}
+
+.input {
+  margin-top: 10px;
+}
+
+input {
+  height: 20px;
+  border-width: 0.5px;
+  border-radius: 5px; 
+  border-color: #303d34;
+}
+
+button {
+  height: 25px;
+  border-radius: 5px; 
+  border: none;
+  background-color: #303d34;
+  color: white;
+  margin-left: 5px; 
+}
+
+.translated {
+  margin: 10px;
+  color: #303d34;
+}

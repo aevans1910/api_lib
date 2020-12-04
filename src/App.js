@@ -37,13 +37,17 @@ function App() {
             </p>
           </div>
         </div>
-        <label>English</label>
-        <br/>
-        <input type="text" value={text} onChange={ e => setText(e.target.value)} placeholder="Type your text here..."/>
-        <button onClick={onTranslateClick}>Translate</button>
-        <br/>
-        <label>Yoda</label>
-        <div>{yodaText}</div>
+        <div className="translator">
+          <label>English</label>
+          <br/>
+          {/* <div className="input"> */}
+            <input type="text" value={text} onChange={ e => setText(e.target.value)} placeholder="Type your text here..."/>
+            <button onClick={onTranslateClick}>Translate</button>
+          {/* </div> */}
+          <br/>
+          <label>Yoda</label>
+          <div>{yodaText}</div>
+        </div>
       </div>
     </div>
   );
