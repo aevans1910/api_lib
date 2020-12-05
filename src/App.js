@@ -1,22 +1,19 @@
 import React, { useState } from 'react';
-import axios from "axios";
 import './App.css';
+import onTranslateClick from "./onTranslateClick";
 
 function App() {
   let [text, setText] = useState("");
   let [yodaText, setYodaText] = useState("");
 
-  const onTranslateClick = () =>  {
-    axios
-      .post("/translate/yoda.json", { text })
-      .then(res => {
-        const { translated } = res.data.contents;
-        setYodaText(translated);
-      })
-      .catch(err => {
-        console.log(err);
-      })
-  };
+  onTranslateClick('I am Yoda')
+  .then(res => {
+    const { translated } = res.data.contents;
+    setYodaText(translated);
+  })
+  .catch(err => {
+    console.log(err);
+  })
 
   return (
     <div>
