@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
-import onTranslateClick from "./onTranslateClick";
+import {translateYoda2} from "./onTranslateClick";
 
 function App() {
   let [text, setText] = useState("");
   let [yodaText, setYodaText] = useState("");
 
-  onTranslateClick('I am Yoda')
-  .then(res => {
-    const { translated } = res.data.contents;
-    setYodaText(translated);
-  })
-  .catch(err => {
-    console.log(err);
-  })
+  // translateYoda2("Hello how are you").then((response) => {setText(response)})
 
   return (
     <div>
@@ -39,7 +32,12 @@ function App() {
           <br/>
           {/* <div className="input"> */}
             <input type="text" value={text} onChange={ e => setText(e.target.value)} placeholder="Type your text here..."/>
-            <button onClick={onTranslateClick}>Translate</button>
+            <button onClick={() => {
+              translateYoda2(text).then((response) => {
+                console.log(response)
+                setYodaText(response.contents.translated)
+              })
+            }}>Translate</button>
           {/* </div> */}
           <br/>
           <label>Yoda</label>
